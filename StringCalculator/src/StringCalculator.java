@@ -13,14 +13,17 @@ public class StringCalculator {
             sb.delete(0,2);
             if(sb.charAt(0)=='[')
             {
+                while(sb.charAt(0)=='[')
+                {
                     sb.deleteCharAt(0);
                     delimiter.append(sb.charAt(0));
                     while(sb.charAt(0)!=']')
                         sb.deleteCharAt(0);
-                    sb.deleteCharAt(0);
-                    sb.deleteCharAt(0);
-                    numbers=sb.toString();
-                    delimiter.append("]+");
+                    sb.deleteCharAt(0);   
+                }
+                sb.deleteCharAt(0);
+                numbers=sb.toString();
+                delimiter.append("]+");
             }
             else
             {
@@ -53,7 +56,7 @@ public class StringCalculator {
         {
             String msg="negatives not allowed: "+negative;
             throw new IllegalArgumentException(msg); 
-        } 
+        }
         return sum;
     }
 }

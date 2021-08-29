@@ -68,4 +68,11 @@ public class StringCalculatorTest {
          Assert.assertEquals(6,sc.Add("//[***]\n1***2***3"));
          Assert.assertEquals(10,sc.Add("//[;;]\n1;;4;;5"));
     }
+    
+    //Test for more different delimiter
+    @Test
+    public void testAddMoreDifferentDelimiter(){
+        Assert.assertEquals(10,sc.Add("//[*][']\n1*2'3'4"));
+        Assert.assertEquals(10,sc.Add("//[;][@]\n1;4@5"));
+    }
 }
