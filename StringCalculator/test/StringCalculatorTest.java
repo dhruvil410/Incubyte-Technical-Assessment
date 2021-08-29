@@ -43,4 +43,11 @@ public class StringCalculatorTest {
         
     }
     
+    //Test for different delimiters
+    @Test 
+    public void testAddDifferentDelimiter(){
+        Assert.assertEquals(12,sc.Add("//\n\n1\n5\n6"));
+        Assert.assertEquals(60,sc.Add("//;\n10;20;30"));
+    }
+    
 }
