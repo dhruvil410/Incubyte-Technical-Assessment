@@ -17,13 +17,19 @@ public class StringCalculator {
         else
             delimiter.append("[,\n]");
         String numbersArray[]=numbers.split(new String(delimiter));
-        if(numbersArray.length==1)
-            return Integer.parseInt(numbersArray[0]);
         int sum=0;
+        int temp=0;
+        boolean neg=false;
         for(int i=0;i<numbersArray.length;i++)
         {
-            sum=sum+Integer.parseInt(numbersArray[i]);
+            temp=Integer.parseInt(numbersArray[i]);
+            if(temp<0)
+                neg=true;
+            else
+                sum=sum+temp;
         }
+        if(neg)
+                throw new IllegalArgumentException("negatives not allowed"); 
         return sum;
     }
 }

@@ -50,4 +50,11 @@ public class StringCalculatorTest {
         Assert.assertEquals(60,sc.Add("//;\n10;20;30"));
     }
     
+    //Test for negative
+    @Test(expected=IllegalArgumentException.class)
+    public void testAddNoNegative(){
+        Assert.assertEquals(26,sc.Add("3\n-5\n10,2,9\n2"));
+        Assert.assertEquals(7,sc.Add("//;\n-1;1;6"));
+    }
+    
 }
