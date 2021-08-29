@@ -28,4 +28,11 @@ public class StringCalculatorTest {
         Assert.assertEquals(7, sc.Add("2,5"));
     }
     
+    //Test for many numbers
+    @Test
+    public void testAddManyNumber(){
+        Assert.assertEquals(550, sc.Add("10,20,30,40,50,60,70,80,90,100"));
+        Assert.assertEquals(10, sc.Add("1,2,3,4"));
+    }
+    
 }
