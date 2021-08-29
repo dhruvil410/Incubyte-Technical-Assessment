@@ -5,4 +5,4 @@ This repository contains Incubyte technical assesment submission od String Calcu
     3. Numbers separated by comma or newline
     4. Negative exception
     5. Nummbers not greater than 1000
-    6. multiple delimiters with any length 
+    6. Multiple delimiters with any length 
