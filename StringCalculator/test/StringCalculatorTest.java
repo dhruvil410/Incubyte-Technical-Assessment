@@ -35,4 +35,12 @@ public class StringCalculatorTest {
         Assert.assertEquals(10, sc.Add("1,2,3,4"));
     }
     
+    //Test for delimiter can be "\n or ,"
+    @Test
+    public void testAddNewLineDelimiter(){
+        Assert.assertEquals(15,sc.Add("6\n5,4"));
+        Assert.assertEquals(28,sc.Add("2\n5\n10,6,3\n2"));
+        
+    }
+    
 }
