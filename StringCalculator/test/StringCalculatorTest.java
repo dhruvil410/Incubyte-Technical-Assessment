@@ -56,4 +56,9 @@ public class StringCalculatorTest {
        sc.Add("3\n-5\n10,2,9\n2");
     }
     
+    //Test for number bigger than 1000
+    @Test
+    public void testAddBiggerthan1000(){
+        Assert.assertEquals(1001,sc.Add("1000,1,1001"));
+    } 
 }

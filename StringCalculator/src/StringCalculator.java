@@ -30,6 +30,8 @@ public class StringCalculator {
                 neg=true;
                 negative.add(temp);
             }
+            else if(temp>1000)
+                continue;
             else
                 sum=sum+temp;
         }
