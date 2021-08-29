@@ -1,3 +1,4 @@
+import java.util.*;
 public class StringCalculator {
     //Method to add two numbers
     public int Add(String numbers)
@@ -17,6 +18,7 @@ public class StringCalculator {
         else
             delimiter.append("[,\n]");
         String numbersArray[]=numbers.split(new String(delimiter));
+        List<Integer> negative=new ArrayList<>();
         int sum=0;
         int temp=0;
         boolean neg=false;
@@ -24,12 +26,18 @@ public class StringCalculator {
         {
             temp=Integer.parseInt(numbersArray[i]);
             if(temp<0)
+            {
                 neg=true;
+                negative.add(temp);
+            }
             else
                 sum=sum+temp;
         }
         if(neg)
-                throw new IllegalArgumentException("negatives not allowed"); 
+        {
+            String msg="negatives not allowed: "+negative;
+            throw new IllegalArgumentException(msg); 
+        } 
         return sum;
     }
 }
