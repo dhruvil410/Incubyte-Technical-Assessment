@@ -11,9 +11,23 @@ public class StringCalculator {
         {
             delimiter.append("[");
             sb.delete(0,2);
-            delimiter.append(sb.charAt(0));
-            numbers=sb.substring(2);
-            delimiter.append("]");
+            if(sb.charAt(0)=='[')
+            {
+                    sb.deleteCharAt(0);
+                    delimiter.append(sb.charAt(0));
+                    while(sb.charAt(0)!=']')
+                        sb.deleteCharAt(0);
+                    sb.deleteCharAt(0);
+                    sb.deleteCharAt(0);
+                    numbers=sb.toString();
+                    delimiter.append("]+");
+            }
+            else
+            {
+               delimiter.append(sb.charAt(0));
+               numbers=sb.substring(2);
+               delimiter.append("]");
+            }
         }
         else
             delimiter.append("[,\n]");

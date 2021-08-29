@@ -61,4 +61,11 @@ public class StringCalculatorTest {
     public void testAddBiggerthan1000(){
         Assert.assertEquals(1001,sc.Add("1000,1,1001"));
     } 
+    
+    //Test for any length of delimiter
+    @Test
+    public void testAddAnyLengthDelimiter(){
+         Assert.assertEquals(6,sc.Add("//[***]\n1***2***3"));
+         Assert.assertEquals(10,sc.Add("//[;;]\n1;;4;;5"));
+    }
 }
